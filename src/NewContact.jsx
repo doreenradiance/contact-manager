@@ -44,7 +44,7 @@ class NewContact extends Component {
                         <option>customer</option>
                     </select>
                 </div>
-                <input type="submit" value="Submit" id='input' style={{ backgroundColor: 'blue', borderRadius: '8px', }} />
+                <input type="submit" value="Submit" id='input' style={{ backgroundColor: 'blue', color: 'white', borderRadius: '8px', }} />
                 <hr />
             </form>
         );
