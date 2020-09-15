@@ -29,14 +29,14 @@ class Update extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" onChange={this.handleChange} id ='input ' style ={{backgroundColor:'cream',}} />
+                        <input type="text" name="name" onChange={this.handleChange} id ='input ' style ={{backgroundColor:'white',}} />
                     </div>
                     <div>
                         <label htmlFor="contact">Contact</label>
-                        <input type="numerals" name="contact" onChange={this.handleChange} id ='input' style ={{backgroundColor:'cream',}}  />
+                        <input type="numerals" name="contact" onChange={this.handleChange} id ='input' style ={{backgroundColor:'white',}}  />
                     </div>
                     <div>
-                        Group<select name="group" id="select"  onChange={this.handleChange} id ='input' style ={{backgroundColor:'cream',}} >
+                        Group<select name="group" id="select"  onChange={this.handleChange} id ='input' style ={{backgroundColor:'white',}} >
                             <option>family</option>
                             <option>friend</option>
                             <option>customer</option>

@@ -1,0 +1,19 @@
+const initialState ={
+     user : []
+}
+
+const userReducer = (state = initialState,action) => {
+    switch (action.type){
+        case"ADD_USER":
+        const newUser = {
+            name:action.payload.name
+            contact:action.payload.contact
+            group:action.payload.group
+        }
+       return {...state,contact:[...state.contact,newUser]};
+       default:
+       return state;
+     }
+}
+
+export default contactReducer;
