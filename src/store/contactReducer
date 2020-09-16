@@ -5,11 +5,7 @@ const initialState ={
 const userReducer = (state = initialState,action) => {
     switch (action.type){
         case"ADD_USER":
-        const newUser = {
-            name:action.payload.name
-            contact:action.payload.contact
-            group:action.payload.group
-        }
+        const newUser=action.payload
        return {...state,contact:[...state.contact,newUser]};
        default:
        return state;

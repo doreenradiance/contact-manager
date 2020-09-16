@@ -18,7 +18,7 @@ class App extends Component {
    this.addNewUser = this.addNewUser.bind(this)
     }
     addNewUser = (user) => {
-      this.setState({users: [...this.state.users, newUser]})
+      this.props({users: [...this.state.users, newUser]})
       console.log (user)
     }
     render(){
