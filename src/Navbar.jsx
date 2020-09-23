@@ -7,14 +7,14 @@ class Navbar extends React.Component {
             <nav className="navbar navbar-default" id="navbar">
                 <div className="container-fluid container">
                     <div className="navbar-header">
-                        <a className="navbar-brand" href="#">CONTACT MANAGER</a>
+                        <p style={{color: "blue", textDecoration:'underline', }}>CONTACT MANAGER</p>
                     </div>
 
 
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-right">
-                            <li><a href="#">CONTACT LIST</a></li>
-                            <li><a href="#">NEW CONTACT</a></li>
+                            <li><p style={{color: "blue", textDecoration:'underline',}} >CONTACT LIST</p></li>
+                            <li><p style={{color: "blue", textDecoration:'underline',}} >NEW CONTACT</p></li>
                         </ul>
                     </div>
                 </div>

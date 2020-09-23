@@ -1,5 +1,8 @@
-import React, { Component, Fragment } from 'react';
-import Form from './Form';
+import React, { Component } from 'react';
+import {addContact} from "./store/contactAction";
+import { connect } from "react-redux";
+
+
 
 
 class NewContact extends Component {
@@ -21,8 +24,7 @@ class NewContact extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addUser(this.state)
-        this.setState({ name: "", contact: "", group: "", })
+        this.props.addContact(this.state)
         console.log("submitted");
 
     }
@@ -38,17 +40,23 @@ class NewContact extends Component {
                     <input type="numerals" name="contact" onChange={this.handleChange} id='input' style={{ backgroundColor: 'cream', }} />
                 </div>
                 <div>
-                    Group<select name="group" id="select" onChange={this.handleChange} id='input' style={{ backgroundColor: 'cream', }} >
-                        <option>family</option>
-                        <option>friend</option>
-                        <option>customer</option>
-                    </select>
+                        Group<select value={this.state.value} onChange={this.handleChange} name="group">
+                            <option value=""></option>
+                            <option value="family">Family</option>
+                            <option value="friend">Friend</option>
+                            <option value="customer">Customer</option>
+                        </select>
                 </div>
                 <input type="submit" value="Submit" id='input' style={{ backgroundColor: 'blue', color: 'white', borderRadius: '8px', }} />
-                <hr />
+
             </form>
+            
         );
     }
 }
 
-export default NewContact;
+const mapDispatchToProps = {
+    addContact:addContact,
+}
+
+export default connect( null, mapDispatchToProps) (NewContact);
