@@ -25,8 +25,8 @@ const contactReducer = (state = initialState, action) => {
                 if (contact.id === action.contact.id){
                      return{...contact, ...action.edited_list}
                 } else {
-                     return contact;
-                }
+                     return contact;      
+               }
                });
                return{...state, contact: editedContact}
           default:
