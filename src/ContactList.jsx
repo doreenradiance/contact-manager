@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const ContactList = ( {name,contact,  group, id, deleteContact}) => {
-    const handleClick = () =>{
-       deleteContact (id)
+      const handleClick=() => {
+       deleteContact(id)
     }
     return (
         <div style={{ backgroundColor: 'lightBlue' }}>

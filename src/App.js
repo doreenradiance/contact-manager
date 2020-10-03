@@ -2,7 +2,7 @@ import './App.css';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContact, deleteContact } from './store/contactAction'
+import { addContact, deleteContact, getAllContacts } from './store/contactAction'
 import Navbar from './Navbar';
 import NewContact from './NewContact';
 import ContactList from './ContactList';
@@ -19,7 +19,10 @@ export class App extends Component {
   deleteContact = contact_id => {
     this.props.deleteContact(contact_id);
   }
-
+  
+  componentDidMount(){
+ this.props.getAllContacts();
+  }
 
   render() {
     console.log (this.props)
@@ -57,7 +60,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   addContact: addContact,
-  deleteContact: deleteContact
+  deleteContact: deleteContact,
+  getAllContacts:getAllContacts
 
 }
 
