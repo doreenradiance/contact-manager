@@ -2,7 +2,8 @@ import './App.css';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContact, deleteContact, getAllContacts } from './store/contactAction'
+import { addContact, deleteContact, getAllContacts } from './store/contactAction';
+import {logoutUser} from './store/authActions';
 import Navbar from './Navbar';
 import NewContact from './NewContact';
 import ContactList from './ContactList';
@@ -14,20 +15,23 @@ export class App extends Component {
   addNewContact = (contact) => {
     this.props.addContact({ contact: [...this.addcontact, contact] })
     console.log(contact)
-  };  
+  };
 
   deleteContact = contact_id => {
     this.props.deleteContact(contact_id);
   }
-  
-  componentDidMount(){
- this.props.getAllContacts();
+
+  componentDidMount() {
+    this.props.getAllContacts();
   }
 
   render() {
-    console.log (this.props)
+    console.log(this.props)
     return (
-      <div className='App' style={{ backgroundColor: 'lightBlue', }}>
+      <div className='App' style={{ backgroundColor: 'lightBlue', }}>  
+
+        <button onClick={this.props.logoutUser}>Logout</button>
+        
         <Navbar />
         <h1 id='heading' style={{
           color: 'blue', fontWeight: 'bold', textDecoration: 'underline',
@@ -54,14 +58,19 @@ export class App extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({
-  contacts: state.contacts
-})
+
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    contacts: state.contactState.contacts,
+  };
+}
 
 const mapDispatchToProps = {
   addContact: addContact,
   deleteContact: deleteContact,
-  getAllContacts:getAllContacts
+  getAllContacts: getAllContacts,
+  logoutUser: logoutUser,
 
 }
 

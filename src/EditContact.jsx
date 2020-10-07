@@ -63,7 +63,7 @@ class EditContact extends Component {
     }
 }
 const mapStateToProps = (state, ownProps) => ({
-    contact: this.state.contact.find(contact => contact.id === ownProps.match.params.id)
+    contact: state.contactState.contact.find(contact => contact.id === ownProps.match.params.id)
 })
 
 const mapDispatchToProps = {

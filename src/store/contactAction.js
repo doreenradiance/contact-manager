@@ -1,6 +1,3 @@
-import { firestore } from "firebase";
-
-
 export const addContact = (contact) => {
     return (dispatch, state, { getFirestore }) => {
         getFirestore()
